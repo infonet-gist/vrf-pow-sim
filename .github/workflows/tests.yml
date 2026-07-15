@@ -1,0 +1,42 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-dev-lock.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev-lock.txt
+
+      - name: Compile Python sources
+        run: >-
+          python -m py_compile
+          generate_network.py
+          run_simulations.py
+          pow_simulation.py
+          vrf_pow_sim/__init__.py
+          vrf_pow_sim/hash_power.py
+          vrf_pow_sim/network.py
+          vrf_pow_sim/protocols.py
+
+      - name: Run tests
+        run: python -m pytest -q

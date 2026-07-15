@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software in academic work, please cite the article below."
+title: "VRF-PoW Simulation"
+type: software
+authors:
+  - family-names: "Kim"
+    given-names: "Seungmin"
+license: MIT
+repository-code: "https://github.com/smin-k/vrf-pow-simulation"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Kim"
+      given-names: "Seungmin"
+    - family-names: "Choi"
+      given-names: "Haeung"
+    - family-names: "Yoon"
+      given-names: "Minho"
+    - family-names: "Lee"
+      given-names: "Heung-No"
+  doi: "10.1109/TNSE.2026.3657405"
+  journal: "IEEE Transactions on Network Science and Engineering"
+  start: 6293
+  end: 6309
+  title: "VRF-PoW: Proof of Work Consensus With Verifiable Random Function"
+  volume: 13
+  year: 2026

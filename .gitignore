@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Generated experiment artifacts
+simulation_output/
+results*/
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Large topology/cache data
+*.npy
+*.npz
+*.metadata.json
+
+# Local notebooks and archived working copies
+*.ipynb
+*.zip
+
+# Local copy of the published paper
+/paper/
